@@ -17,9 +17,10 @@ import java.time.LocalDateTime;
 public class UserStatus {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "stats_id")
     private Long statsId;
 
-    @Column(nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long userId;
 
     private Long height;
@@ -32,9 +33,11 @@ public class UserStatus {
     private Gender gender;
 
     @CreationTimestamp
+    @Column(name = "created_at")
     private LocalDateTime createAt;  // 최초 입력 일시
 
     @UpdateTimestamp
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;  // 마지막 수정 일시
 
 }
